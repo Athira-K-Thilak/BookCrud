@@ -20,5 +20,9 @@ from store import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('books/add',views.BookCreateView.as_view(),name='book-add'),
+    path('books/add/',views.BookCreateView.as_view(),name='book-add'),
+    path('books/all/',views.BookListView.as_view(),name='book-list'),
+    path('books/<int:pk>/',views.BookDetailView.as_view(),name='book-detail'),
+    path('books/<int:pk>/remove/',views.BookDeleteView.as_view(),name='book-delete'),
+    path('books/<int:pk>/change/',views.BookUpdateView.as_view(),name='book-update'),
 ]
