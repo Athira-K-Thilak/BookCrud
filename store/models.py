@@ -18,6 +18,8 @@ class Book(models.Model):
 
     year=models.CharField(max_length=10)
 
+    image=models.ImageField(upload_to='bookimages',default='bookimages/default.png')
+
     def __str__(self):
         
         return self.title
